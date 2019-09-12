@@ -46,7 +46,7 @@ pipeline {
     }
     stage('Read YAML File') {
       steps {
-        sh ("kubectl apply -f ./blue-controller.json")
+        sh ("eksctl create cluster -f cluster.yaml")
       }
     }
   }
