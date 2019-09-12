@@ -46,7 +46,7 @@ pipeline {
     }
     stage('Read YAML File') {
       steps {
-        echo 'Reading YAML File Complete'
+        kubectl apply -f ./blue-controller.json
       }
     }
   }
