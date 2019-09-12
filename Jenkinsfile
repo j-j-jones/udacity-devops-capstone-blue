@@ -1,12 +1,5 @@
 pipeline {
-  
-environment {
-registry = 'jjjones/udacity-devops-capstone'
-registryCredential = 'dockerhub'
-dockerImage = ''
-}
-
-agent any
+  agent any
   stages {
     stage('Cloning Git') {
       steps {
@@ -17,7 +10,6 @@ agent any
       steps {
         echo 'Linting Now...'
         sh 'hostname'
-        //sh 'tidy -q -e **/*.html'
         sh 'tidy -q -e *.html'
       }
     }
@@ -27,6 +19,7 @@ agent any
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
+
       }
     }
     stage('Deploy Image') {
@@ -45,19 +38,15 @@ agent any
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    
-    //stage('Create Kubernetes Cluster') {
-     // steps {
-       // sh('aws_cluster_create.sh')
-    //  }
-   // }
-    
     stage('Read YAML File') {
       steps {
-        //script{ datas = readYaml (file: 'manifest.yml') }
-            echo 'Reading YAML File Complete'
+        echo 'Reading YAML File Complete'
       }
     }
-  
+  }
+  environment {
+    registry = 'jjjones/udacity-devops-capstone'
+    registryCredential = 'dockerhub'
+    dockerImage = ''
   }
 }
