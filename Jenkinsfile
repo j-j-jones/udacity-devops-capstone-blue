@@ -46,6 +46,7 @@ pipeline {
     }
     stage('Read YAML File') {
       steps {
+        sh ("ls -a")
         sh ("eksctl create cluster -f cluster.yaml")
       }
     }
