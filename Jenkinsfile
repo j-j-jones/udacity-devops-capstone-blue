@@ -48,7 +48,6 @@ pipeline {
     }
     stage('Create EKS Cluster') {
       steps {
-        //sh 'ls -a'
         sh 'aws ec2 describe-instances'
       }
     }
