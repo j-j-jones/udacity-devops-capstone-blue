@@ -48,7 +48,7 @@ pipeline {
     }
     stage('Create EKS Cluster') {
       steps {
-        sh 'aws ec2 describe-instances'
+        sh 'aws ec2 describe-instances --region us-east-1'
       }
     }
   }
