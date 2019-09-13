@@ -49,6 +49,7 @@ pipeline {
     stage('Create EKS Cluster') {
       steps {
         sh 'ls -a'
+        sh 'eksctl version'
       }
     }
   }
