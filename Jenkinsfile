@@ -42,13 +42,14 @@ pipeline {
       steps {
         withAWS(credentials: 'aws-static', region: 'us-east-1') {
           sh 'echo "hello KB">hello.txt'
+          sh 'aws ec2 describe-instances --region us-east-1'
         }
 
       }
     }
     stage('Create EKS Cluster') {
       steps {
-        sh 'aws ec2 describe-instances --region us-east-1'
+        sh 'ls -a'
       }
     }
   }
