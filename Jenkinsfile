@@ -50,6 +50,7 @@ pipeline {
     stage('Create EKS Cluster') {
       steps {
         sh 'eksctl get cluster'
+        sh 'eksctl create cluster -f cluster.yaml'
       }
     }
   }
