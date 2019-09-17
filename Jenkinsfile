@@ -49,7 +49,7 @@ pipeline {
     }
     stage('Create EKS Cluster') {
       steps {
-        sh 'eksctl get cluster'
+        sh 'sudo eksctl get cluster'
       }
     }
   }
