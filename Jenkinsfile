@@ -42,7 +42,7 @@ pipeline {
       steps {
         sh 'ls *.yaml'
         withAWS(credentials: 'aws-static', region: 'us-east-1') {
-          sh 'sudo eksctl create cluster --config-file=cluster-blue.yaml '
+          sh 'sudo eksctl create cluster --config-file=deployment.yaml '
         }
 
       }
