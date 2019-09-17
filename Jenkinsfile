@@ -42,8 +42,7 @@ pipeline {
       steps {
         sh 'ls *.yaml'
         withAWS(credentials: 'aws-static', region: 'us-east-1') {
-          //sh 'sudo eksctl create cluster --config-file=deployment.yaml '
-           sh 'kubectl apply -f ./blue-controller.json'
+          sh 'kubectl apply -f ./blue-controller.json'
         }
 
       }
