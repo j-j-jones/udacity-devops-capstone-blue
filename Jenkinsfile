@@ -38,7 +38,7 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    stage('hello AWS') {
+    stage('Hello AWS') {
       steps {
         withAWS(credentials: 'aws-static', region: 'us-east-1') {
           sh 'echo "hello KB">hello.txt'
@@ -49,7 +49,7 @@ pipeline {
     }
     stage('Create EKS Cluster') {
       steps {
-        sh 'ls -a'
+        sh 'eksctl get cluster'
       }
     }
   }
