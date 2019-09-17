@@ -41,7 +41,7 @@ pipeline {
     stage('Hello AWS') {
       steps {
         withAWS(credentials: 'aws-static', region: 'us-east-1') {
-          sh 'sudo eksctl create cluster -f cluster-blue.yaml '
+          sh 'sudo eksctl create cluster --config-file=cluster-blue.yaml '
         }
 
       }
