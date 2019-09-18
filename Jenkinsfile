@@ -47,18 +47,14 @@ pipeline {
 
       }
     }
-    
     stage('Apply K8 File') {
       steps {
         withAWS(credentials: 'aws-key', region: 'us-east-1') {
           echo 'Success'
-          //sh 'kubectl apply -f blue-controller.json'
         }
 
       }
     }
-  
-  
   }
   environment {
     registry = 'jjjones/udacity-devops-capstone-blue'
