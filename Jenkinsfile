@@ -50,7 +50,7 @@ pipeline {
     
     stage('Apply K8 File') {
       steps {
-        withAWS(credentials: 'aws-key', region: 'us-east-1' serverUrl: 'https://api.k8s.my-company.com']) {
+        withAWS(credentials: 'aws-key', region: 'us-east-1' serverUrl: 'https://api.k8s.my-company.com') {
           echo 'Success'
           sh 'kubectl apply -f blue-controller.json'
         }
