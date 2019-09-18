@@ -38,10 +38,8 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    
     stage('Hello AWS') {
       steps {
-        //sh 'kubectl apply -f blue-controller.json'
         withAWS(credentials: 'aws-static', region: 'us-east-1') {
           sh 'kubectl config use-context --kubeconfig=config'
         }
