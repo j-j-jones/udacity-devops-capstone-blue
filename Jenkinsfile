@@ -26,7 +26,7 @@ pipeline {
       steps {
         echo 'Pushing Image...'
         script {
-            docker.withRegistry( '', registryCredential ) {
+          docker.withRegistry( '', registryCredential ) {
             dockerImage.push("latest")
           }
         }
@@ -38,13 +38,11 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    
     stage('Hello AWS') {
       steps {
         sh 'kubectl apply -f blue-controller.json'
         withAWS(credentials: 'aws-static', region: 'us-east-1') {
-          //sh 'kubectl config use-context arn:aws:eks:us-east-1:08198f90fe8bc57f0:cluster/udacity-devops-capstone'
-         sh  'kubectl config use-context --kubeconfig=config'
+          sh 'kubectl config use-context --kubeconfig=config'
         }
 
       }
