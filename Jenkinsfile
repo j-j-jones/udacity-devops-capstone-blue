@@ -40,7 +40,7 @@ pipeline {
     }
     stage('Hello AWS') {
       steps {
-        withAWS(credentials: 'aws-static', region: 'us-east-1') {
+        withAWS(credentials: 'aws-key', region: 'us-east-1') {
           echo 'Success'
           sh 'kubectl config use-context arn:aws:eks:us-east-1:546547842218:cluster/capstonecluster'
         }
