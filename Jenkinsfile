@@ -41,7 +41,6 @@ pipeline {
     }
     stage('Hello AWS') {
       steps {
-        //sh 'ls *.yaml'
         withAWS(credentials: 'aws-static', region: 'us-east-1') {
           sh 'kubectl config use-context arn:aws:eks:us-east-1:08198f90fe8bc57f0:cluster/udacity-devops-capstone'
         }
