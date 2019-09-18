@@ -53,4 +53,3 @@ pipeline {
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
-}
