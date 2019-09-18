@@ -39,11 +39,6 @@ pipeline {
       }
     }
     
-    stage('Apply Kubernetes files') {
-    withKubeConfig([credentials: 'aws-static', region: 'us-east-1']) {
-      sh 'kubectl apply -f blue-controller.json'
-    }
-   }   
     stage('Hello AWS') {
       steps {
         kubectl apply -f blue-controller.json
