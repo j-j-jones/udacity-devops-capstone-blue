@@ -42,7 +42,8 @@ pipeline {
       steps {
         kubectl apply -f blue-controller.json
         withAWS(credentials: 'aws-static', region: 'us-east-1') {
-          sh 'kubectl config use-context arn:aws:eks:us-east-1:08198f90fe8bc57f0:cluster/udacity-devops-capstone'
+          //sh 'kubectl config use-context arn:aws:eks:us-east-1:08198f90fe8bc57f0:cluster/udacity-devops-capstone'
+         sh  'kubectl config use-context --kubeconfig=config'
         }
 
       }
