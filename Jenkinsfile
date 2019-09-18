@@ -40,8 +40,9 @@ pipeline {
     }
     stage('Hello AWS') {
       steps {
-        withKubeConfig(credentials: 'aws-static', region: 'us-east-1') {
-          sh 'kubectl config use-context --kubeconfig=config'
+        withAWS(credentials: 'aws-static', region: 'us-east-1') {
+          //sh 'kubectl config use-context --kubeconfig=config'
+          echo 'Success'
         }
 
       }
