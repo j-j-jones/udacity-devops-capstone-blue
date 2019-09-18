@@ -42,14 +42,10 @@ pipeline {
       steps {
         sh 'ls *.yaml'
         withAWS(credentials: 'aws-static', region: 'us-east-1') {
-          sh 'kubectl apply -f ./blue-controller.json'
+          sh 'kubectl config use-context arn:aws:eks:us-east-1:546547842218:cluster/capstonecluster'
+          //sh 'kubectl apply -f ./blue-controller.json'
         }
 
-      }
-    }
-    stage('Create EKS Cluster') {
-      steps {
-        sh 'echo "hello KB"> hello.txt'
       }
     }
   }
