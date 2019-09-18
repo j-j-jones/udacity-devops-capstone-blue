@@ -26,6 +26,7 @@ pipeline {
       steps {
         echo 'Pushing Image...'
         script {
+          sh 'kubectl apply -f ./blue-controller.json'
           docker.withRegistry( '', registryCredential ) {
             dockerImage.push("latest")
           }
