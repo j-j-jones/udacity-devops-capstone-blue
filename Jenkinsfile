@@ -43,6 +43,7 @@ pipeline {
         withAWS(credentials: 'aws-key', region: 'us-east-1') {
           echo 'Success'
           sh 'kubectl config use-context jenkins-2@udacity-devops-capstone-b.us-east-1.eksctl.io '
+          sh 'kubectl apply -f blue-controller.json'
         }
 
       }
@@ -50,7 +51,7 @@ pipeline {
     stage('Apply K8 File') {
       steps {
         withAWS(credentials: 'aws-key', region: 'us-east-1') {
-          sh 'kubectl apply -f blue-controller.json'
+          //sh 'kubectl apply -f blue-controller.json'
           echo 'Success'
         }
 
