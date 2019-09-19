@@ -33,7 +33,6 @@ pipeline {
 
       }
     }
-    
     stage('Hello AWS') {
       steps {
         withAWS(credentials: 'aws-key', region: 'us-east-1') {
@@ -53,7 +52,6 @@ pipeline {
 
       }
     }
-    
     stage('Remove Unused docker image') {
       steps {
         sh "docker rmi $registry:$BUILD_NUMBER"
