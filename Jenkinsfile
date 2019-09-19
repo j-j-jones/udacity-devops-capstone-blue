@@ -44,6 +44,7 @@ pipeline {
           echo 'Success'
           sh 'kubectl config use-context jenkins-2@udacity-devops-capstone-b.us-east-1.eksctl.io'
           sh 'kubectl apply -f blue-controller.json'
+          sh 'kubectl apply -f blue-green-service.json'
         }
 
       }
