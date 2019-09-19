@@ -46,7 +46,7 @@ pipeline {
     }
     stage('Apply K8 File') {
       steps {
-        withAWS(credentials: 'aws-key', region: 'us-east-1') {
+       // withAWS(credentials: 'aws-key', region: 'us-east-1') {
           echo 'Success'
         }
 
