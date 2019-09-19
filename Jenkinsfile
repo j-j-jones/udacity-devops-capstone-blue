@@ -42,7 +42,7 @@ pipeline {
       steps {
         withAWS(credentials: 'aws-key', region: 'us-east-1') {
           echo 'Success'
-          sh 'kubectl config use-context jenkins-2@udacity-devops-capstone-b.us-east-1.eksctl.io '
+          sh 'kubectl config use-context jenkins-2@udacity-devops-capstone-b.us-east-1.eksctl.io:jjjones/udacity-devops-capstone-blue'
           sh 'kubectl apply -f blue-controller.json'
         }
 
