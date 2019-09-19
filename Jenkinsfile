@@ -46,11 +46,9 @@ pipeline {
     }
     stage('Apply K8 File') {
       steps {
-                echo 'Success'
-        }
-
+        echo 'Success'
       }
-    
+    }
     stage('Remove Unused docker image') {
       steps {
         sh "docker rmi $registry:$BUILD_NUMBER"
