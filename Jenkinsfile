@@ -46,12 +46,11 @@ pipeline {
     }
     stage('Apply K8 File') {
       steps {
-       // withAWS(credentials: 'aws-key', region: 'us-east-1') {
-          echo 'Success'
+                echo 'Success'
         }
 
       }
-    }
+    
     stage('Remove Unused docker image') {
       steps {
         sh "docker rmi $registry:$BUILD_NUMBER"
