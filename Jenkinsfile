@@ -42,7 +42,7 @@ pipeline {
       steps {
         withAWS(credentials: 'aws-key', region: 'us-east-1') {
           echo 'Success'
-          sh 'kubectl config use-context arn:aws:cloudformation:us-east-1:724427472536:stack/eksctl-udacity-devops-capstone-b-cluster/f157f2e0-da81-11e9-bad8-127e9735111e'
+          sh 'kubectl config use-context jenkins-2@udacity-devops-capstone-b.us-east-1.eksctl.io '
         }
 
       }
