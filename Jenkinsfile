@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'rm --cached index.html'
+        git rm --cached 'index.html'
         git 'https://github.com/j-j-jones/udacity-devops-capstone-blue.git'
       }
     }
