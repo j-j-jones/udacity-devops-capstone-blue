@@ -16,13 +16,14 @@
          "metadata":{
             "labels":{
                "app":"blue"
+               "version": "v0.2"
             }
          },
          "spec":{
             "containers":[
                {
                   "name":"blue",
-                  "image":"jjjones/udacity-devops-capstone-blue",
+                  "image":"jjjones/udacity-devops-capstone-blue:0.2",
                   "ports":[
                      {
                         "name":"http-server",
