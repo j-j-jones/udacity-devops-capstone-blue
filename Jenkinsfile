@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git rm --cached 'index.html'
-        git 'https://github.com/j-j-jones/udacity-devops-capstone-blue.git'
+       git --nocache 'https://github.com/j-j-jones/udacity-devops-capstone-blue.git'
       }
     }
     stage('Linting HTML') {
