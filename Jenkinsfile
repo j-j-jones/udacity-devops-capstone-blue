@@ -49,7 +49,6 @@ pipeline {
         echo 'Success'
       }
     }
-    
   }
   environment {
     registry = 'jjjones/udacity-devops-capstone-blue'
