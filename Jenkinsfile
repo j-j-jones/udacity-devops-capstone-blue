@@ -56,7 +56,7 @@ pipeline {
     }
   }
   environment {
-    registry = 'jjjones/udacity-devops-capstone-blue-2'
+    registry = 'jjjones/udacity-devops-capstone-blue'
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
