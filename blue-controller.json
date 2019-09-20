@@ -2,7 +2,7 @@
    "kind":"ReplicationController",
    "apiVersion":"v1",
    "metadata":{
-      "name":"blue-v2",
+      "name":"blue",
       "labels":{
          "app":"blue"
       }
@@ -23,7 +23,7 @@
             "containers":[
                {
                   "name":"blue",
-                  "image":"jjjones/udacity-devops-capstone-blue:v2",
+                  "image":"jjjones/udacity-devops-capstone-blue",
                   "ports":[
                      {
                         "name":"http-server",
