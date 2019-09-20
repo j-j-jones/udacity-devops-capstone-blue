@@ -24,7 +24,7 @@
                {
                   "name":"blue",
                   "image":"jjjones/udacity-devops-capstone-blue",
-                   "imagePullPolicy":"Always"
+                  "imagePullPolicy":"Always",
                   "ports":[
                      {
                         "name":"http-server",
