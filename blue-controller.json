@@ -2,7 +2,7 @@
    "kind":"ReplicationController",
    "apiVersion":"v1",
    "metadata":{
-      "name":"blue",
+      "name":"blue-v2",
       "labels":{
          "app":"blue"
       }
@@ -16,7 +16,7 @@
          "metadata":{
             "labels":{
                "app":"blue"
-               "version":"v0.2"
+               
             }
          },
          "spec":{
