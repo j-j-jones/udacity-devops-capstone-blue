@@ -2,27 +2,27 @@
    "kind":"ReplicationController",
    "apiVersion":"v1",
    "metadata":{
-      "name":"blue",
+      "name":"blue-2",
       "labels":{
-         "app":"blue"
+         "app":"blue-2"
       }
    },
    "spec":{
       "replicas":1,
       "selector":{
-         "app":"blue"
+         "app":"blue-2"
       },
       "template":{
          "metadata":{
             "labels":{
-               "app":"blue"
+               "app":"blue-2"
                
             }
          },
          "spec":{
             "containers":[
                {
-                  "name":"blue",
+                  "name":"blue-2",
                   "image":"jjjones/udacity-devops-capstone-blue:latest",
                   "imagePullPolicy":"Always",
                   "ports":[
