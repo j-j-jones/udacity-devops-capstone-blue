@@ -16,7 +16,7 @@
          "metadata":{
             "labels":{
                "app":"blue"
-               "version": "v0.2"
+               "version":"v0.2"
             }
          },
          "spec":{
